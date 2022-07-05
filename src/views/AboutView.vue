@@ -2,28 +2,35 @@
 
 <template>
 	<div class="about">
-		<h1 v-for="(persona, indexSercicio) in consulta" :key="indexSercicio"
-    :prueba="persona.nombre">
-			{{ prueba }}
+		<h1 v-for="(persona, id) in consulta" :key="id">
+			{{ persona.id }}
+			{{ persona.nombre }}
+			{{ persona.apellido }}
 		</h1>
-		<p>
-			{{ prueba }}
-		</p>
+		<input type="text" placeholder="nombre" v-model="variable" />
+    <input type="text" placeholder="nombre" v-model="variable1" />
+		<button v-on:click="consulta1(variable, variable1)">enviar</button>
 	</div>
 </template>
 
 <script lang="ts">
 //import { defineComponent } from '@vue/composition-api'
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
-  data() {
-    return {
-      prueba: 'hola'
-    }
-  },
+	data() {
+		return {
+			variable: '',
+		};
+	},
 	computed: {
 		...mapGetters(['consulta']),
+	},
+	methods: {
+		...mapMutations(['consulta1']),
+		agregar() {
+			console.log('hola');
+		},
 	},
 };
 </script>
