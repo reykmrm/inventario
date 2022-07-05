@@ -1,0 +1,10 @@
+debemos realizar un inventario
+el inventario debe tener  10 productos
+tasmbien debe mostrar de lado el administrador
+como va quedando el inventario a medida de las compras.
+
+
+tipos de usuarios ccliente empleado
+el programa debe facturar el total de su compra
+los articulos que lleva
+valor unitario
